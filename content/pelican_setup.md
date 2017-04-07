@@ -5,6 +5,10 @@ Tags: pelican, til
 Author: junshoong
 
 pelican 3.7.1을 설치했다.
-`pip install pelican markdown`
-`pelican-quickstart`
+```
+pip install pelican markdown
+pelican-quickstart
+```
 로 설치를 진행한다.
+
+`simple-bootstrap` 테마를 적용했다.
