@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>TIL</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2017-04-08T02:40:00+09:00</updated><entry><title>[Pelican] 설치</title><link href="/pelican-seolci.html" rel="alternate"></link><published>2017-04-08T02:40:00+09:00</published><updated>2017-04-08T02:40:00+09:00</updated><author><name>junshoong</name></author><id>tag:None,2017-04-08:/pelican-seolci.html</id><summary type="html">&lt;p&gt;pelican 3.7.1을 설치했다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pelican markdown
+pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;로 설치를 진행한다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;simple-bootstrap&lt;/code&gt; 테마를 적용했다.&lt;/p&gt;</summary><content type="html">&lt;p&gt;pelican 3.7.1을 설치했다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pelican markdown
+pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;로 설치를 진행한다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;simple-bootstrap&lt;/code&gt; 테마를 적용했다.&lt;/p&gt;</content><category term="pelican"></category><category term="til"></category></entry></feed>
