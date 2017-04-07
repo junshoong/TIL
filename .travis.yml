@@ -1,23 +1,28 @@
 language: python
+
 python:
-    - "3.6"
+- '3.6'
+
+env:
+  global:
+    secure: JmQ2KueDIMCk38nW8t7AEIkKT8lIXOTIbEGE55DsgFYM6GDt0qdUkb1kAljC1W8tHLB6w9d9FPV/eQWwd3Dfm5VeTzO0XghvO2z3Zi8WL8ysa17tN9fdmmdQtPckvzO4Ez+eq2zRwp4uEENBHrzuD4vtDTnagWA73N3nODfaLF4caYusiLwD6Qq6fnaXpTL0+nM+9JoCffNqrdxoa+B3Nkbend/EHl1fTMQfifjj4YIwJlqh5e6T/zeffApn8cznXJZ7Av6hg12VS0U2F9s6Vvr1VG8g4wyNLf85Vvva9zgxo1vg0+18Cp8o4DFZveNzNIBLk4gxSTTN3umy3vTVOn8d+yYmeEZurDXSS6bMELOM22/R+eSHBgQSp/GtKq2q5MpeHABL2rvEo2UsG8sM0nzx3qTSIiO8Cfm7VVkmUIkUqaR/r6YWF9wWPveFjJ0gIDsE5DO6jr7rCYIyavoTG/LeSEVDelxnIX+Cv1pAEgNk1sZdG/Xo22UKpt6BeuA+Z+uJ9eXhqU8hmygJ9qtE1K4qmHpEg8mWaht00DdvigL/U1nK5g4yaazovsV//G3JYHRpk09mli9nXKFMLV+eWxr6AZDrVCtVhsjYqKo8YhSEFA/QZ+b+2BGXPv5K+QFpaF2A2kRCzsMdfPvaBtmyfrpFZ0cMkxVncSq05HW7gY4=
 
 before_install:
-    - git config --global user.email "vaporize93@gmail.com"
-    - git config --global user.name "harvey"
+- git config --global user.email "vaporize93@gmail.com"
+- git config --global user.name "harvey"
 
-install: 
-    - pip install -r requirements.txt -q
+install:
+- pip install -r requirements.txt -q
 
 sctipt:
-    - make publish
+- make publish
 
-after_success: 
-    - cd output
-    - git add -A
-    - git commit -m "Github Pages updated by Travis-CI."
-    - git push https://${GH_TOKEN}@github.com/vaporize93/TIL.git gh-pages --quiet
+after_success:
+- cd output
+- git add -A
+- git commit -m "Github Pages updated by Travis-CI."
+- git push https://${GH_TOKEN}@github.com/vaporize93/TIL.git gh-pages --quiet
 
 branches:
-    only:
-        - master
+  only:
+  - master
