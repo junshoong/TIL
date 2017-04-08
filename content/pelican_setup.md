@@ -1,6 +1,7 @@
 Title: [Pelican] 설치
 Date: 2017-04-08	02:40
 Category: Pelican
+Slug: pelican-setup
 Tags: pelican, til
 Author: junshoong
 
