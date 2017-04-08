@@ -11,4 +11,4 @@ pelican-quickstart
 ```
 로 설치를 진행한다.
 
-`simple-bootstrap` 테마를 적용했다.
+[simple-bootstrap](https://github.com/getpelican/pelican-themes/tree/master/simple-bootstrap) 테마를 적용했다.
