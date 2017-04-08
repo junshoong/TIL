@@ -6,11 +6,11 @@ pelican-quickstart
 
 
 &lt;p&gt;로 설치를 진행한다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;simple-bootstrap&lt;/code&gt; 테마를 적용했다.&lt;/p&gt;</summary><content type="html">&lt;p&gt;pelican 3.7.1을 설치했다.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/getpelican/pelican-themes/tree/master/simple-bootstrap"&gt;simple-bootstrap&lt;/a&gt; 테마를 적용했다.&lt;/p&gt;</summary><content type="html">&lt;p&gt;pelican 3.7.1을 설치했다.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pelican markdown
 pelican-quickstart
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;로 설치를 진행한다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;simple-bootstrap&lt;/code&gt; 테마를 적용했다.&lt;/p&gt;</content><category term="pelican"></category><category term="til"></category></entry></feed>
+&lt;p&gt;&lt;a href="https://github.com/getpelican/pelican-themes/tree/master/simple-bootstrap"&gt;simple-bootstrap&lt;/a&gt; 테마를 적용했다.&lt;/p&gt;</content><category term="pelican"></category><category term="til"></category></entry></feed>
