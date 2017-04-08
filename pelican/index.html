@@ -33,7 +33,14 @@ pelican-quickstart
 
 
 <p>로 설치를 진행한다.</p>
-<p><a href="https://github.com/getpelican/pelican-themes/tree/master/simple-bootstrap">simple-bootstrap</a> 테마를 적용했다.</p> </div><!-- entry-content -->
+<p><a href="https://github.com/getpelican/pelican-themes/tree/master/simple-bootstrap">simple-bootstrap</a> 테마를 적용했다.</p>
+<p>원하는 경로에 테마를 받은 후에 <code>pelicanconf.py</code> 파일에 아래와 같이 적어준다.</p>
+<div class="highlight"><pre><span></span><span class="n">THEME</span> <span class="o">=</span> <span class="s2">&quot;&lt;your_themes_path&gt;/simple-bootstrap&quot;</span>
+</pre></div>
+
+
+<p>make publish 로 배포를 준비할 경우, 이전에 유지되던 디렉터리가 사라져서 난감했다. 이런 경우에는 <code>publishconf.py</code> 파일에 아래와 같이 추가해주자.</p>
+<div class="highlight"><pre><span></span><span class="n">DELETE_OUTPUT_DIRECTORY …</span></pre></div> </div><!-- entry-content -->
         </article>
 <div class="pager">
       <ul>
