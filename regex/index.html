@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Articles by junshoong - TIL</title>
+        <title> Articles in Regex category - TIL</title>
         <meta charset="utf-8" />
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="../theme/static/css/style.css" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href="http://til.junshoong.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Full Atom Feed" />
+        <link href="http://til.junshoong.net/feeds/regex.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Categories Atom Feed" />
     </head>
 
     <body id="index" class="archive">
@@ -21,7 +22,7 @@
 				<h2 class="text-muted"></h2>
              </div>
 <section id="content" class="content">
-<h2>Articles by junshoong</h2>
+<h2>Articles in the Regex category</h2>
 
         <article class="hentry">
                 <header> <h2 class="entry-title"><a href="../regex/chinese-string-without-special-character-starting" rel="bookmark" title="Permalink to [Regex] 특정문자로 시작하지 않는 중국어가 포함된 문자열">[Regex] 특정문자로 시작하지 않는 중국어가 포함된 문자열</a></h2> </header>
@@ -30,24 +31,6 @@
 <p>중국어 자판에서는 전각느낌표를 사용한다. <code>！</code> != <code>!</code></p>
 </blockquote>
 <p>먼저 중국어 문자열의 범위를 살펴보자. 영어에서는 <code>[a-z]</code>나 <code>[A-Z]</code>등을 사용해서 간단히 거를 수 있다. 한글도 마찬가지로 <code>[ㄱ-힇]</code> 정도로 거른다. 하지만 중국어는 유니코드로 걸러내야한다. <code>[\u4e00-\u9fff]</code>로 표현 …</p> </div><!-- entry-content -->
-        </article>
-        <article class="hentry">
-                <header> <h2 class="entry-title"><a href="../pelican/pelican-setup" rel="bookmark" title="Permalink to [Pelican] 설치">[Pelican] 설치</a></h2> </header>
-                <div class="entry-content"> <p>pelican 3.7.1을 설치했다.</p>
-<div class="highlight"><pre><span></span>pip install pelican markdown
-pelican-quickstart
-</pre></div>
-
-
-<p>로 설치를 진행한다.</p>
-<p><a href="https://github.com/getpelican/pelican-themes/tree/master/simple-bootstrap">simple-bootstrap</a> 테마를 적용했다.</p>
-<p>원하는 경로에 테마를 받은 후에 <code>pelicanconf.py</code> 파일에 아래와 같이 적어준다.</p>
-<div class="highlight"><pre><span></span><span class="n">THEME</span> <span class="o">=</span> <span class="s2">&quot;&lt;your_themes_path&gt;/simple-bootstrap&quot;</span>
-</pre></div>
-
-
-<p>make publish 로 배포를 준비할 경우, 이전에 유지되던 디렉터리가 사라져서 난감했다. 이런 경우에는 <code>publishconf.py</code> 파일에 아래와 같이 추가해주자.</p>
-<div class="highlight"><pre><span></span><span class="n">DELETE_OUTPUT_DIRECTORY …</span></pre></div> </div><!-- entry-content -->
         </article>
 <div class="pager">
       <ul>
