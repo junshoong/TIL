@@ -1,5 +1,5 @@
 Title: [Regex] 특정문자로 시작하지 않는 중국어가 포함된 문자열
-Date: 2017-04-09	04:25
+Date: 2017-04-09 15:40
 Category: Regex
 Slug: chinese-string-without-special-character-starting
 Tags: regex, python, slackbot
