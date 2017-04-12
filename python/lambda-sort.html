@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[Python] lambda를 통한 sort - TIL</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="http://til.junshoong.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Full Atom Feed" />
+        <link href="http://til.junshoong.net/feeds/python.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Categories Atom Feed" />
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="..">Home</a></li>
+                    <li><a href="../archives.html">Archives</a></li>
+                    <li><a href="http://blog.junshoong.net">Blog</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="..">TIL</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="../python/lambda-sort" rel="bookmark"
+         title="Permalink to [Python] lambda를 통한 sort">[Python] lambda를 통한 sort</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <p><code>lambda</code>는 익명 함수이다. python 외에도 여러 언어에서 지원하는 expression으로, 짧은 함수를 잠깐 사용할 때 쓸 수 있다.
+가장 기본적으로는 아래와 같이 쓴다.</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="mi">225</span>
+</pre></div>
+
+
+<p><code>lambda</code>뒤에 인자를 받고 return 값을 적어준다.
+아래와 같이 사용할 수도 있다.</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">read</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">read</span><span class="p">()</span>
+<span class="mi">10</span>
+<span class="s1">&#39;10</span><span class="se">\n</span><span class="s1">&#39;</span>
+</pre></div>
+
+
+<p><code>sort</code> 함수의 key로도 사용한다.</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
+<span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+</pre></div>
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2017-04-12T00:00:00+09:00">
+      2017-04-12, Wed
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="../author/junshoong">junshoong</a>
+    </address> in <a href="../python/index">Python</a> Tagged <a href="../tag/python">python </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="http://til.junshoong.net/feeds/all.atom.xml">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="..">TIL</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>
