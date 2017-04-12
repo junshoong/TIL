@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[CSS] rem과 em - TIL</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="http://til.junshoong.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Full Atom Feed" />
+        <link href="http://til.junshoong.net/feeds/css.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Categories Atom Feed" />
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="..">Home</a></li>
+                    <li><a href="../archives.html">Archives</a></li>
+                    <li><a href="http://blog.junshoong.net">Blog</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="..">TIL</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="../css/rem-vs-em" rel="bookmark"
+         title="Permalink to [CSS] rem과 em">[CSS] rem과 em</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <p>css로 디자인을 할때 <code>margin</code>이나 <code>padding</code>등의 값을 주곤한다. 이럴때 사용하는 단위가 <code>px</code>, <code>em</code>, <code>rem</code>등이 있다.</p>
+<ul>
+<li><code>px</code>은 픽셀을 의미한다. 고정된 크기를 제공한다.</li>
+<li><code>em</code>은 해당 요소의 font-size에 비례하는 값이다.</li>
+<li><code>rem</code>은 html요소(root)의 root font-size에 비례한다. </li>
+</ul>
+<p>그러니까.. <code>rem</code>이 html의 전반에 걸쳐서 사용하는 font-size에 영향을 받기 때문에 이를 사용해서 디자인을 하는게 좋다.  <code>em</code>을 사용해도 되긴하지만 해당 요소에 특별하게 영향을 줄때만 사용하고 왠만하면 <code>rem</code>이 권장된다.</p>
+<p>더 자세한 내용은 <a href="https://webdesign.tutsplus.com/ko/tutorials/comprehensive-guide-when-to-use-em-vs-rem--cms-23984">tutsplus의 'Rem 그리고 Em, 언제 써야 할까'</a>를 참고한다.</p>
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2017-04-13T00:00:00+09:00">
+      2017-04-13, Thu
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="../author/junshoong">junshoong</a>
+    </address> in <a href="../css/index">CSS</a> Tagged <a href="../tag/css">css </a><a href="../tag/front">front </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="http://til.junshoong.net/feeds/all.atom.xml">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="..">TIL</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>
