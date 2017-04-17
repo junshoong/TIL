@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[Angular] no provider for Http 에러 - TIL</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="http://til.junshoong.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Full Atom Feed" />
+        <link href="http://til.junshoong.net/feeds/angular.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Categories Atom Feed" />
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="..">Home</a></li>
+                    <li><a href="../archives.html">Archives</a></li>
+                    <li><a href="http://blog.junshoong.net">Blog</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="..">TIL</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="../angular/angular-http-provider" rel="bookmark"
+         title="Permalink to [Angular] no provider for Http 에러">[Angular] no provider for Http 에러</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <p>https://gonehybrid.com/build-your-first-mobile-app-with-ionic-2-angular-2-part-5/
+간단한 ionic 예제를 따라하던중 <code>Uncaught (in promise): No provider for Http!</code> 로그가 계속 찍힌다.</p>
+<p>이건 <code>app.moduls.ts</code>파일에 아래와 같은 부분을 추가해주면 된다.</p>
+<div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/http&#39;</span><span class="p">;</span>
+
+<span class="kd">@NgModule</span><span class="p">({</span>
+    <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span> <span class="p">...</span> <span class="p">,</span> <span class="nx">HttpModule</span> <span class="p">],</span>
+    <span class="p">...</span>
+<span class="p">})</span>
+</pre></div>
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2017-04-17T00:00:00+09:00">
+      2017-04-17, Mon
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="../author/junshoong">junshoong</a>
+    </address> in <a href="../angular/index">Angular</a> Tagged <a href="../tag/angular">angular </a><a href="../tag/http">http </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="http://til.junshoong.net/feeds/all.atom.xml">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="..">TIL</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>
