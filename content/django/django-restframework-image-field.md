@@ -1,5 +1,6 @@
 Title: [Django] restframework에서 image 제공하기
 Date: 2017-04-16
+Modified: 2017-04-17
 Category: Django
 Tags: django, rest
 Slug: django-restframework-image-field
@@ -36,3 +37,12 @@ class TestViewSet(viewsets.ModelViewSet):
 
 이렇게 제공하면 url끝에 ~/image/ 경로로 이미지에 접근할 수 있다.
 그런데 url의 정보는 그대로인것 같은데 이건 serialize에서 수정해주면 될 것같다.
+
+_/myapp/serializers.py_
+```python
+class TestSerializer(serializer.HyperlinkedModelSerializer):
+    image = serializers.HyperlinkedIdentityField(view_name='test-image', format='html')
+    ...
+```
+
+이런 식으로 제공할 수 있다.
