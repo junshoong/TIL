@@ -60,6 +60,14 @@
 
 <p>이렇게 제공하면 url끝에 ~/image/ 경로로 이미지에 접근할 수 있다.
 그런데 url의 정보는 그대로인것 같은데 이건 serialize에서 수정해주면 될 것같다.</p>
+<p><em>/myapp/serializers.py</em></p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestSerializer</span><span class="p">(</span><span class="n">serializer</span><span class="o">.</span><span class="n">HyperlinkedModelSerializer</span><span class="p">):</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">HyperlinkedIdentityField</span><span class="p">(</span><span class="n">view_name</span><span class="o">=</span><span class="s1">&#39;test-image&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s1">&#39;html&#39;</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div>
+
+
+<p>이런 식으로 제공할 수 있다.</p>
   </div><!-- /.entry-content -->
    <footer class="post-info text-muted">
     Posted on <abbr class="published" title="2017-04-16T00:00:00+09:00">
