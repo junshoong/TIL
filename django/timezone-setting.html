@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Articles in Django category - TIL</title>
+        <title>[Django] timezone 설정 - TIL</title>
         <meta charset="utf-8" />
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="../theme/static/css/style.css" rel="stylesheet" />
@@ -15,21 +15,23 @@
             <div class="header">
                 <ul class="nav nav-pills pull-right">
                     <li class=""><a href="..">Home</a></li>
-                    <li class="active"><a href="../archives.html">Archives</a></li>
+                    <li><a href="../archives.html">Archives</a></li>
                     <li><a href="http://blog.junshoong.net">Blog</a></li>
                 </ul>
                 <h3 class="text-muted"><a href="..">TIL</a></h3>
 				<h2 class="text-muted"></h2>
              </div>
-<section id="content" class="content">
-<h2>Articles in the Django category</h2>
-
-        <article class="hentry">
-                <header>
-                    <h2 class="entry-title"><a href="../django/timezone-setting" rel="bookmark" title="Permalink to [Django] timezone 설정">[Django] timezone 설정</a><span class="title-date">2017-04-19, Wed</span></h2>
-                </header>
-                <div class="entry-content">
-                    <p>Django에서 기본적인 DateTimeField를 현재 timezone으로 맞추고 싶다.</p>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="../django/timezone-setting" rel="bookmark"
+         title="Permalink to [Django] timezone 설정">[Django] timezone 설정</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <p>Django에서 기본적인 DateTimeField를 현재 timezone으로 맞추고 싶다.</p>
 <p>settings.py</p>
 <div class="highlight"><pre><span></span><span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;Asia/Seoul&#39;</span>
 <span class="c1"># USE_TZ = True</span>
@@ -38,25 +40,15 @@
 
 <p>여기서 <code>TIME_ZONE</code>만 수정해주니까 저장되는 값이 달랐다. <code>USE_TZ</code>도 comment 해주니 정상적으로 입력되었다.
 참고로 Django에서는 <a href="https://www.w3.org/TR/NOTE-datetime"><code>ISO 8601</code></a> 을 따른다.</p>
-                    <a class="btn btn-default btn-xs" href="../django/timezone-setting"> more... </a>
-                </div><!-- entry-content -->
-        </article>
-        <article class="hentry">
-                <header>
-                    <h2 class="entry-title"><a href="../django/django-restframework-image-field" rel="bookmark" title="Permalink to [Django] restframework에서 image 제공하기">[Django] restframework에서 image 제공하기</a><span class="title-date">2017-04-16, Sun</span></h2>
-                </header>
-                <div class="entry-content">
-                    <p>DRF에서 image field를 serving 해보자.</p>
-                    <a class="btn btn-default btn-xs" href="../django/django-restframework-image-field"> more... </a>
-                </div><!-- entry-content -->
-        </article>
-<div class="pager">
-      <ul>
-                        <li class="previous disabled"><a>← Previous</a></li>
-                        <li class="next disabled"><a>Next →</a></li>
-      </ul>
-    </div>
-</section><!-- content -->
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2017-04-19T00:00:00+09:00">
+      2017-04-19, Wed
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="../author/junshoong">junshoong</a>
+    </address> in <a href="../django/index">Django</a> Tagged <a href="../tag/django">django </a><a href="../tag/timezone">timezone </a>  </footer><!-- /.post-info -->
+</section>
             <footer id="contentinfo" class="footer">
                     <nav class="pull-right bottom-nav">
                         <a href="http://til.junshoong.net/feeds/all.atom.xml">RSS</a>

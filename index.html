@@ -24,6 +24,23 @@
 
         <article class="hentry">
                 <header>
+                    <h2 class="entry-title"><a href="./django/timezone-setting" rel="bookmark" title="Permalink to [Django] timezone 설정">[Django] timezone 설정</a><span class="title-date">2017-04-19, Wed</span></h2>
+                </header>
+                <div class="entry-content">
+                    <p>Django에서 기본적인 DateTimeField를 현재 timezone으로 맞추고 싶다.</p>
+<p>settings.py</p>
+<div class="highlight"><pre><span></span><span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;Asia/Seoul&#39;</span>
+<span class="c1"># USE_TZ = True</span>
+</pre></div>
+
+
+<p>여기서 <code>TIME_ZONE</code>만 수정해주니까 저장되는 값이 달랐다. <code>USE_TZ</code>도 comment 해주니 정상적으로 입력되었다.
+참고로 Django에서는 <a href="https://www.w3.org/TR/NOTE-datetime"><code>ISO 8601</code></a> 을 따른다.</p>
+                    <a class="btn btn-default btn-xs" href="./django/timezone-setting"> more... </a>
+                </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header>
                     <h2 class="entry-title"><a href="./angular/angular-http-provider" rel="bookmark" title="Permalink to [Angular] no provider for Http 에러">[Angular] no provider for Http 에러</a><span class="title-date">2017-04-17, Mon</span></h2>
                 </header>
                 <div class="entry-content">

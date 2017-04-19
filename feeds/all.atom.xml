@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>TIL</title><link href="http://til.junshoong.net/" rel="alternate"></link><link href="http://til.junshoong.net/feeds/all.atom.xml" rel="self"></link><id>http://til.junshoong.net/</id><updated>2017-04-17T00:00:00+09:00</updated><entry><title>[Angular] no provider for Http 에러</title><link href="http://til.junshoong.net/angular/angular-http-provider" rel="alternate"></link><published>2017-04-17T00:00:00+09:00</published><updated>2017-04-17T00:00:00+09:00</updated><author><name>junshoong</name></author><id>tag:til.junshoong.net,2017-04-17:/angular/angular-http-provider</id><summary type="html">&lt;p&gt;Uncaught (in promise): No provider for Http! 에러&lt;/p&gt;</summary><content type="html">&lt;p&gt;https://gonehybrid.com/build-your-first-mobile-app-with-ionic-2-angular-2-part-5/
+<feed xmlns="http://www.w3.org/2005/Atom"><title>TIL</title><link href="http://til.junshoong.net/" rel="alternate"></link><link href="http://til.junshoong.net/feeds/all.atom.xml" rel="self"></link><id>http://til.junshoong.net/</id><updated>2017-04-19T00:00:00+09:00</updated><entry><title>[Django] timezone 설정</title><link href="http://til.junshoong.net/django/timezone-setting" rel="alternate"></link><published>2017-04-19T00:00:00+09:00</published><updated>2017-04-19T00:00:00+09:00</updated><author><name>junshoong</name></author><id>tag:til.junshoong.net,2017-04-19:/django/timezone-setting</id><summary type="html">&lt;p&gt;Django에서 기본적인 DateTimeField를 현재 timezone으로 맞추고 싶다.&lt;/p&gt;
+&lt;p&gt;settings.py&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TIME_ZONE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Asia/Seoul&amp;#39;&lt;/span&gt;
+&lt;span class="c1"&gt;# USE_TZ = True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;여기서 &lt;code&gt;TIME_ZONE&lt;/code&gt;만 수정해주니까 저장되는 값이 달랐다. &lt;code&gt;USE_TZ&lt;/code&gt;도 comment 해주니 정상적으로 입력되었다.
+참고로 Django에서는 &lt;a href="https://www.w3.org/TR/NOTE-datetime"&gt;&lt;code&gt;ISO 8601&lt;/code&gt;&lt;/a&gt; 을 따른다.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Django에서 기본적인 DateTimeField를 현재 timezone으로 맞추고 싶다.&lt;/p&gt;
+&lt;p&gt;settings.py&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TIME_ZONE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Asia/Seoul&amp;#39;&lt;/span&gt;
+&lt;span class="c1"&gt;# USE_TZ = True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;여기서 &lt;code&gt;TIME_ZONE&lt;/code&gt;만 수정해주니까 저장되는 값이 달랐다. &lt;code&gt;USE_TZ&lt;/code&gt;도 comment 해주니 정상적으로 입력되었다.
+참고로 Django에서는 &lt;a href="https://www.w3.org/TR/NOTE-datetime"&gt;&lt;code&gt;ISO 8601&lt;/code&gt;&lt;/a&gt; 을 따른다.&lt;/p&gt;</content><category term="django"></category><category term="timezone"></category></entry><entry><title>[Angular] no provider for Http 에러</title><link href="http://til.junshoong.net/angular/angular-http-provider" rel="alternate"></link><published>2017-04-17T00:00:00+09:00</published><updated>2017-04-17T00:00:00+09:00</updated><author><name>junshoong</name></author><id>tag:til.junshoong.net,2017-04-17:/angular/angular-http-provider</id><summary type="html">&lt;p&gt;Uncaught (in promise): No provider for Http! 에러&lt;/p&gt;</summary><content type="html">&lt;p&gt;https://gonehybrid.com/build-your-first-mobile-app-with-ionic-2-angular-2-part-5/
 간단한 ionic 예제를 따라하던중 &lt;code&gt;Uncaught (in promise): No provider for Http!&lt;/code&gt; 로그가 계속 찍힌다.&lt;/p&gt;
 &lt;p&gt;이건 &lt;code&gt;app.moduls.ts&lt;/code&gt;파일에 아래와 같은 부분을 추가해주면 된다.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;HttpModule&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;@angular/http&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
