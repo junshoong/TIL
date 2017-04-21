@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[Django] User에게 권한 부여하기 - TIL</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="http://til.junshoong.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Full Atom Feed" />
+        <link href="http://til.junshoong.net/feeds/django.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Categories Atom Feed" />
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="..">Home</a></li>
+                    <li><a href="../archives.html">Archives</a></li>
+                    <li><a href="http://blog.junshoong.net">Blog</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="..">TIL</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="../django/set-user-permission" rel="bookmark"
+         title="Permalink to [Django] User에게 권한 부여하기">[Django] User에게 권한 부여하기</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <p>코드 몇줄로 간단하게 권한을 부여할 수 있다.</p>
+<div class="highlight"><pre><span></span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;testuser&#39;</span><span class="p">)</span>
+<span class="n">perm</span> <span class="o">=</span> <span class="n">Permission</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">codename</span><span class="o">=</span><span class="s1">&#39;model.add_model&#39;</span><span class="p">)</span>
+<span class="n">user</span><span class="o">.</span><span class="n">user_permissions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">perm</span><span class="p">)</span>
+</pre></div>
+
+
+<p>여기서 주의할 점은 적용되긴하지만 <code>has_perm</code>등으로 확인하면 해당 권한이 없다고 나온다는 점이다. 이는 캐싱되어 있는 정보때문에 그렇다. 캐시를 지우거나 인스턴스를 새로 불러오면 올바르게 적용된걸 확인할 수 있다.
+아래와 같이 해결할 수 있다.</p>
+<div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">user</span><span class="o">.</span><span class="n">_perm_cache</span>
+<span class="k">del</span> <span class="n">user</span><span class="o">.</span><span class="n">_user_perm_cache</span>
+<span class="c1"># OR</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+
+<p>아래 링크를 참고할 수 있다.
+- <a href="http://stackoverflow.com/questions/42220272/pytest-django-set-user-permissions">stackoverflow - Pytest-django: set user permissions</a></p>
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2017-04-21T00:00:00+09:00">
+      2017-04-21, Fri
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="../author/junshoong">junshoong</a>
+    </address> in <a href="../django/index">Django</a> Tagged <a href="../tag/django">django </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="http://til.junshoong.net/feeds/all.atom.xml">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="..">TIL</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>

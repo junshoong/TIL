@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Articles in Docker category - TIL</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="http://til.junshoong.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Full Atom Feed" />
+        <link href="http://til.junshoong.net/feeds/docker.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Categories Atom Feed" />
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="..">Home</a></li>
+                    <li class="active"><a href="../archives.html">Archives</a></li>
+                    <li><a href="http://blog.junshoong.net">Blog</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="..">TIL</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="content">
+<h2>Articles in the Docker category</h2>
+
+        <article class="hentry">
+                <header>
+                    <h2 class="entry-title"><a href="../docker/persist-data-with-data-volume" rel="bookmark" title="Permalink to [Docker] Data Volume을 사용해서 데이터 지속하기">[Docker] Data Volume을 사용해서 데이터 지속하기</a><span class="title-date">2017-04-21, Fri</span></h2>
+                </header>
+                <div class="entry-content">
+                    <p>docker와 git-hook을 사용해서 어느정도 프로세스를 자동화하고 있다.
+하지만 docker container를 부수고 다시 build 해서 돌리면 내부 데이터가 날아간다. DB의 경우는 <code>--link</code> 옵션을 이용해서 유지하지만 실제로 upload한 image와 같은 file들의 경우는 컨테이너와 함께 지워진다.</p>
+<p>Data Volume을 사용해서 해결해보자.</p>
+<div class="highlight"><pre><span></span>docker create -v /srv/media --name data-store ubuntu /bin/true
+</pre></div>
+
+
+<p>이렇게하면 ubuntu 이미지를 …</p>
+                    <a class="btn btn-default btn-xs" href="../docker/persist-data-with-data-volume"> more... </a>
+                </div><!-- entry-content -->
+        </article>
+<div class="pager">
+      <ul>
+                        <li class="previous disabled"><a>← Previous</a></li>
+                        <li class="next disabled"><a>Next →</a></li>
+      </ul>
+    </div>
+</section><!-- content -->
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="http://til.junshoong.net/feeds/all.atom.xml">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="..">TIL</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>

@@ -24,6 +24,47 @@
 
         <article class="hentry">
                 <header>
+                    <h2 class="entry-title"><a href="./docker/persist-data-with-data-volume" rel="bookmark" title="Permalink to [Docker] Data Volume을 사용해서 데이터 지속하기">[Docker] Data Volume을 사용해서 데이터 지속하기</a><span class="title-date">2017-04-21, Fri</span></h2>
+                </header>
+                <div class="entry-content">
+                    <p>docker와 git-hook을 사용해서 어느정도 프로세스를 자동화하고 있다.
+하지만 docker container를 부수고 다시 build 해서 돌리면 내부 데이터가 날아간다. DB의 경우는 <code>--link</code> 옵션을 이용해서 유지하지만 실제로 upload한 image와 같은 file들의 경우는 컨테이너와 함께 지워진다.</p>
+<p>Data Volume을 사용해서 해결해보자.</p>
+<div class="highlight"><pre><span></span>docker create -v /srv/media --name data-store ubuntu /bin/true
+</pre></div>
+
+
+<p>이렇게하면 ubuntu 이미지를 …</p>
+                    <a class="btn btn-default btn-xs" href="./docker/persist-data-with-data-volume"> more... </a>
+                </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header>
+                    <h2 class="entry-title"><a href="./django/set-user-permission" rel="bookmark" title="Permalink to [Django] User에게 권한 부여하기">[Django] User에게 권한 부여하기</a><span class="title-date">2017-04-21, Fri</span></h2>
+                </header>
+                <div class="entry-content">
+                    <p>코드 몇줄로 간단하게 권한을 부여할 수 있다.</p>
+<div class="highlight"><pre><span></span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;testuser&#39;</span><span class="p">)</span>
+<span class="n">perm</span> <span class="o">=</span> <span class="n">Permission</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">codename</span><span class="o">=</span><span class="s1">&#39;model.add_model&#39;</span><span class="p">)</span>
+<span class="n">user</span><span class="o">.</span><span class="n">user_permissions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">perm</span><span class="p">)</span>
+</pre></div>
+
+
+<p>여기서 주의할 점은 적용되긴하지만 <code>has_perm</code>등으로 확인하면 해당 권한이 없다고 나온다는 점이다. 이는 캐싱되어 있는 정보때문에 그렇다. 캐시를 지우거나 인스턴스를 새로 불러오면 올바르게 적용된걸 확인할 수 …</p>
+                    <a class="btn btn-default btn-xs" href="./django/set-user-permission"> more... </a>
+                </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header>
+                    <h2 class="entry-title"><a href="./django/serializer-or-view" rel="bookmark" title="Permalink to [Django] serializer의 구현">[Django] serializer의 구현</a><span class="title-date">2017-04-20, Thu</span></h2>
+                </header>
+                <div class="entry-content">
+                    <p>DRF에서 create를 구현하는 경우 <code>ViewSet</code>의 <code>perform_create</code>를 사용하면 Serializer의 create를 돌지 않는다.</p>
+                    <a class="btn btn-default btn-xs" href="./django/serializer-or-view"> more... </a>
+                </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header>
                     <h2 class="entry-title"><a href="./django/timezone-setting" rel="bookmark" title="Permalink to [Django] timezone 설정">[Django] timezone 설정</a><span class="title-date">2017-04-19, Wed</span></h2>
                 </header>
                 <div class="entry-content">
@@ -110,33 +151,10 @@
                     <a class="btn btn-default btn-xs" href="./regex/chinese-string-without-special-character-starting"> more... </a>
                 </div><!-- entry-content -->
         </article>
-        <article class="hentry">
-                <header>
-                    <h2 class="entry-title"><a href="./pelican/pelican-setup" rel="bookmark" title="Permalink to [Pelican] 설치">[Pelican] 설치</a><span class="title-date">2017-04-09, Sun</span></h2>
-                </header>
-                <div class="entry-content">
-                    <p>pelican 3.7.1을 설치했다.</p>
-<div class="highlight"><pre><span></span>pip install pelican markdown
-pelican-quickstart
-</pre></div>
-
-
-<p>로 설치를 진행한다.</p>
-<p><a href="https://github.com/getpelican/pelican-themes/tree/master/simple-bootstrap">simple-bootstrap</a> 테마를 적용했다.</p>
-<p>원하는 경로에 테마를 받은 후에 <code>pelicanconf.py</code> 파일에 아래와 같이 적어준다.</p>
-<div class="highlight"><pre><span></span><span class="n">THEME</span> <span class="o">=</span> <span class="s2">&quot;&lt;your_themes_path&gt;/simple-bootstrap&quot;</span>
-</pre></div>
-
-
-<p>make publish 로 배포를 준비할 경우, 이전에 유지되던 디렉터리가 사라져서 난감했다. 이런 경우에는 <code>publishconf.py</code> 파일에 아래와 같이 추가해주자.</p>
-<div class="highlight"><pre><span></span><span class="n">DELETE_OUTPUT_DIRECTORY …</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="./pelican/pelican-setup"> more... </a>
-                </div><!-- entry-content -->
-        </article>
 <div class="pager">
       <ul>
                         <li class="previous disabled"><a>← Previous</a></li>
-                        <li class="next disabled"><a>Next →</a></li>
+						<li class="next"><a href="./index2.html">Next →</a></li>
       </ul>
     </div>
 </section><!-- content -->
