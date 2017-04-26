@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>TIL - Python</title><link href="http://til.junshoong.net/" rel="alternate"></link><link href="http://til.junshoong.net/feeds/python.atom.xml" rel="self"></link><id>http://til.junshoong.net/</id><updated>2017-04-12T00:00:00+09:00</updated><entry><title>[Python] lambda를 통한 sort</title><link href="http://til.junshoong.net/python/lambda-sort" rel="alternate"></link><published>2017-04-12T00:00:00+09:00</published><updated>2017-04-12T00:00:00+09:00</updated><author><name>junshoong</name></author><id>tag:til.junshoong.net,2017-04-12:/python/lambda-sort</id><summary type="html">&lt;p&gt;&lt;code&gt;lambda&lt;/code&gt;는 익명 함수이다. python 외에도 여러 언어에서 지원하는 expression으로, 짧은 함수를 잠깐 사용할 때 쓸 수 있다.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>TIL - Python</title><link href="http://til.junshoong.net/" rel="alternate"></link><link href="http://til.junshoong.net/feeds/python.atom.xml" rel="self"></link><id>http://til.junshoong.net/</id><updated>2017-04-26T00:00:00+09:00</updated><entry><title>[Python] 프로그램 시간 체크하기</title><link href="http://til.junshoong.net/python/time-check" rel="alternate"></link><published>2017-04-26T00:00:00+09:00</published><updated>2017-04-26T00:00:00+09:00</updated><author><name>junshoong</name></author><id>tag:til.junshoong.net,2017-04-26:/python/time-check</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;timeit&lt;/span&gt;
+
+&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;timeit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;default_timer&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;some_progress&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;timeit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;default_timer&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;위와 같이 특정 처리에 걸린 시간을 확인할 수 있다.&lt;/p&gt;</summary><content type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;timeit&lt;/span&gt;
+
+&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;timeit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;default_timer&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;some_progress&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;timeit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;default_timer&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;위와 같이 특정 처리에 걸린 시간을 확인할 수 있다.&lt;/p&gt;</content><category term="python"></category><category term="time"></category></entry><entry><title>[Python] lambda를 통한 sort</title><link href="http://til.junshoong.net/python/lambda-sort" rel="alternate"></link><published>2017-04-12T00:00:00+09:00</published><updated>2017-04-12T00:00:00+09:00</updated><author><name>junshoong</name></author><id>tag:til.junshoong.net,2017-04-12:/python/lambda-sort</id><summary type="html">&lt;p&gt;&lt;code&gt;lambda&lt;/code&gt;는 익명 함수이다. python 외에도 여러 언어에서 지원하는 expression으로, 짧은 함수를 잠깐 사용할 때 쓸 수 있다.
 가장 기본적으로는 아래와 같이 쓴다.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;

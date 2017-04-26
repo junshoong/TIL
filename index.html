@@ -24,6 +24,26 @@
 
         <article class="hentry">
                 <header>
+                    <h2 class="entry-title"><a href="./python/time-check" rel="bookmark" title="Permalink to [Python] 프로그램 시간 체크하기">[Python] 프로그램 시간 체크하기</a><span class="title-date">2017-04-26, Wed</span></h2>
+                </header>
+                <div class="entry-content">
+                    <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">timeit</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+
+<span class="n">some_progress</span><span class="p">()</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">-</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+
+<p>위와 같이 특정 처리에 걸린 시간을 확인할 수 있다.</p>
+                    <a class="btn btn-default btn-xs" href="./python/time-check"> more... </a>
+                </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header>
                     <h2 class="entry-title"><a href="./docker/persist-data-with-data-volume" rel="bookmark" title="Permalink to [Docker] Data Volume을 사용해서 데이터 지속하기">[Docker] Data Volume을 사용해서 데이터 지속하기</a><span class="title-date">2017-04-21, Fri</span></h2>
                 </header>
                 <div class="entry-content">
@@ -136,19 +156,6 @@
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">read</span> <span class="o">=</span> <span class="k">lambda …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="./python/lambda-sort"> more... </a>
-                </div><!-- entry-content -->
-        </article>
-        <article class="hentry">
-                <header>
-                    <h2 class="entry-title"><a href="./regex/chinese-string-without-special-character-starting" rel="bookmark" title="Permalink to [Regex] 특정문자로 시작하지 않는 중국어가 포함된 문자열">[Regex] 특정문자로 시작하지 않는 중국어가 포함된 문자열</a><span class="title-date">2017-04-09, Sun</span></h2>
-                </header>
-                <div class="entry-content">
-                    <p><a href="https://github.com/skhu-sss/ssslackbot/blob/master/plugins/filter.py">ssslackbot</a>을 개발 중에 regex가 필요하게 되었다. 전각 느낌표(<code>！</code>)로 시작하지 않는 중국어가 포함된 문자열을 확인해서 걸러내야하는 작업이다.</p>
-<blockquote>
-<p>중국어 자판에서는 전각느낌표를 사용한다. <code>！</code> != <code>!</code></p>
-</blockquote>
-<p>먼저 중국어 문자열의 범위를 살펴보자. 영어에서는 <code>[a-z]</code>나 <code>[A-Z]</code>등을 사용해서 간단히 거를 수 있다. 한글도 마찬가지로 <code>[ㄱ-힇]</code> 정도로 거른다. 하지만 중국어는 유니코드로 걸러내야한다. <code>[\u4e00-\u9fff]</code>로 표현 …</p>
-                    <a class="btn btn-default btn-xs" href="./regex/chinese-string-without-special-character-starting"> more... </a>
                 </div><!-- entry-content -->
         </article>
 <div class="pager">

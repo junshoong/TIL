@@ -25,6 +25,26 @@
 
         <article class="hentry">
                 <header>
+                    <h2 class="entry-title"><a href="../python/time-check" rel="bookmark" title="Permalink to [Python] 프로그램 시간 체크하기">[Python] 프로그램 시간 체크하기</a><span class="title-date">2017-04-26, Wed</span></h2>
+                </header>
+                <div class="entry-content">
+                    <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">timeit</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+
+<span class="n">some_progress</span><span class="p">()</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">-</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+
+<p>위와 같이 특정 처리에 걸린 시간을 확인할 수 있다.</p>
+                    <a class="btn btn-default btn-xs" href="../python/time-check"> more... </a>
+                </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header>
                     <h2 class="entry-title"><a href="../python/lambda-sort" rel="bookmark" title="Permalink to [Python] lambda를 통한 sort">[Python] lambda를 통한 sort</a><span class="title-date">2017-04-12, Wed</span></h2>
                 </header>
                 <div class="entry-content">
