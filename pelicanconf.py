@@ -49,3 +49,7 @@ AUTHOR_SAVE_AS = AUTHOR_URL+'.html'
 
 LINKS = (('blog', 'http://blog.junshoong.net'),)
 
+PLUGINS = [
+    'pelican_gist',
+]
+
