@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[Python] http 요청을 비동기로하기 - TIL</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="http://til.junshoong.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Full Atom Feed" />
+        <link href="http://til.junshoong.net/feeds/python.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Categories Atom Feed" />
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="..">Home</a></li>
+                    <li><a href="../archives.html">Archives</a></li>
+                    <li><a href="http://blog.junshoong.net">Blog</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="..">TIL</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="../python/asyncronous-http-request" rel="bookmark"
+         title="Permalink to [Python] http 요청을 비동기로하기">[Python] http 요청을 비동기로하기</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <p>http 요청으로 간단한 스크래핑 작업을 하는데 요청 갯수가 일곱개 정도 되니 시간이 오래걸린다.</p>
+<p><code>asyncio</code>와 <code>aiohttp</code>를 사용해서 속도를 높여보자.</p>
+<div class="gist">
+    <script src='https://gist.github.com/6c7db753f49f4720473b34147abc3b6c.js?file=requests_test.py'></script>
+    <noscript>
+        <pre><code>import requests
+from timeit import default_timer as dt
+
+
+s = dt()
+url = 'http://example.com/'
+data = []
+
+for i in range(20):
+    data.append(requests.get(url).text)
+
+print(dt()-s)
+</code></pre>
+    </noscript>
+</div>
+<p>위 코드는 <code>http://example.com</code>에 http get을 20회 실행하는 코드다.
+timeit을 이용해서 시간을 확인해보니 6~7초정도 걸렸다.</p>
+<div class="gist">
+    <script src='https://gist.github.com/6c7db753f49f4720473b34147abc3b6c.js?file=aiohttp_test.py'></script>
+    <noscript>
+        <pre><code>import asyncio
+import aiohttp
+import requests
+from timeit import default_timer as dt
+
+
+s = dt()
+url = 'http://example.com/'
+data = []
+
+
+async def get_html():
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            data.append(await response.text())
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(
+    asyncio.gather(
+        *(get_html() for i in range(20))
+    )
+)
+print(dt()-s)
+</code></pre>
+    </noscript>
+</div>
+<p>같은 동작을 하는 코드지만 비동기처리를 한다.
+시간을 확인해보니 1초 전후로 수행된다.</p>
+<p>입출력이나 대기하는시간이 긴 작업일수록 비동기처리가 효율이 좋을 수 있다.</p>
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2017-04-26T00:00:00+09:00">
+      2017-04-26, Wed
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="../author/junshoong">junshoong</a>
+    </address> in <a href="../python/index">Python</a> Tagged <a href="../tag/python">python </a><a href="../tag/asyncronous">asyncronous </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="http://til.junshoong.net/feeds/all.atom.xml">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="..">TIL</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>
