@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Articles in package tag - TIL</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="http://til.junshoong.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="TIL Full Atom Feed" />
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="..">Home</a></li>
+                    <li class="active"active><a href="../archives.html">Archives</a></li>
+                    <li><a href="http://blog.junshoong.net">Blog</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="..">TIL</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="content">
+<h2>Articles with the package tag</h2>
+
+        <article class="hentry">
+                <header>
+                    <h2 class="entry-title"><a href="../python/import-module-function" rel="bookmark" title="Permalink to [Python]import_module을 사용해서 import 하기">[Python]import_module을 사용해서 import 하기</a><span class="title-date">2017-05-01, Mon</span></h2>
+                </header>
+                <div class="entry-content">
+                    <p>python에서 숫자 등으로 시작하는 패키지를 import 할때는 주의해야한다.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="mi">1234</span>
+<span class="kn">from</span> <span class="mi">1234</span> <span class="kn">import</span> <span class="nn">abc</span>
+</pre></div>
+
+
+<p>위와 같이 숫자로 된 파일은 에러를 뱉을 뿐 import 되지 않는다.
+그럴 땐 아래와 같이 한다.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s1">&#39;1234&#39;</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s1">&#39;1234&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">abc</span><span class="p">()</span>
+</pre></div>
+
+
+<p>위와 같은 작업으로 import를 진행할 수 있다.</p>
+<p>참고링크
+- <a href="https://docs.python.org/3/library/importlib.html#importlib.import_module">python …</a></p>
+                    <a class="btn btn-default btn-xs" href="../python/import-module-function"> more... </a>
+                </div><!-- entry-content -->
+        </article>
+<div class="pager">
+      <ul>
+                        <li class="previous disabled"><a>← Previous</a></li>
+                        <li class="next disabled"><a>Next →</a></li>
+      </ul>
+    </div>
+</section><!-- content -->
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="http://til.junshoong.net/feeds/all.atom.xml">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="..">TIL</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>
